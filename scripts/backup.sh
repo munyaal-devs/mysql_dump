@@ -65,7 +65,7 @@ echo "🚀 Iniciando respaldo de ${MYSQL_DATABASE}..."
 # detecte el fallo de mysqldump inmediatamente.
 # ----------------------------------------------------------------------
 mysqldump --single-transaction --routines --triggers --events \
-    --set-gtid-purged=OFF \
+    --verbose --set-gtid-purged=OFF \
     -h "$MYSQL_HOST" -P "$MYSQL_PORT" -u "$MYSQL_USER" \
     "$MYSQL_DATABASE" > "$TMP_SQL"
 
